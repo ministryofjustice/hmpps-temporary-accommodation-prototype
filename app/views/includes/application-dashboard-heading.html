@@ -4,4 +4,21 @@
             Applications
         </h1>
     </div>
+    <div class="govuk-grid-column-one-third">
+        {%- from "moj/components/search/macro.njk" import mojSearch -%}
+
+        {{ mojSearch({
+          action: '#',
+          method: 'post',
+          input: {
+            id: 'search',
+            name: 'search'
+          },
+          label: false,
+          hint: false,
+          button: {
+            text: 'Search'
+          }
+        }) }}
+    </div>
 </div>
