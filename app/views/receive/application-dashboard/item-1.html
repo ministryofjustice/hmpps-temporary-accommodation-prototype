@@ -1,0 +1,88 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block content %}
+
+{% include 'includes/application-dashboard-heading.html' %}
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+{{ mojSubNavigation({
+  label: 'Sub navigation',
+  items: [{
+    text: 'New(4)',
+    href: './item-1.html',
+    active: true
+  }, {
+    text: 'In progress(3)',
+    href: './item-2.html'
+  }, {
+    text: 'More information requested(1)',
+    href: './item-3.html'
+  }, {
+    text: 'Approved',
+    href: './item-4.html'
+  }, {
+    text: 'Archived',
+    href: './item-5.html'
+  }]
+}) }}
+
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+      <th scope="col" class="govuk-table__header">CRN</th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="ascending">Date received</th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="ascending">Date required</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="1"><a href="#">Mattie Goldner</a></td>
+      <td class="govuk-table__cell">GSR1T2F</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">10/12/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">01/04/23</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="2"><a href="#">Marcus McKnight</a></td>
+      <td class="govuk-table__cell">GSR1T2F</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">10/12/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">01/04/23</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="3"><a href="#">Paul Rogerson</a></td>
+      <td class="govuk-table__cell">GSR1T2F</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">10/12/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">01/04/23</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="4"><a href="#">Maureen Gale</a></td>
+      <td class="govuk-table__cell">GSR1T2F</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">10/12/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1">01/04/23</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+{% endblock %}

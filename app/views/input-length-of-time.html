@@ -19,10 +19,20 @@
             id: "length-of-time-years",
             name: "length-of-time-years",
             suffix: {
-                text: "Years"
+                text: "Days"
             },
-            classes: "govuk-input--width-5",
+            classes: "govuk-input--width-2",
             spellcheck: false
+            }) }}
+
+            {{ govukInput({
+                id: "length-of-time-months",
+                name: "length-of-time-months",
+                suffix: {
+                text: "Weeks"
+                },
+                classes: "govuk-input--width-2",
+                spellcheck: false
             }) }}
 
             {{ govukInput({
@@ -31,7 +41,17 @@
                 suffix: {
                 text: "Months"
                 },
-                classes: "govuk-input--width-5",
+                classes: "govuk-input--width-2",
+                spellcheck: false
+            }) }}
+
+            {{ govukInput({
+                id: "length-of-time-months",
+                name: "length-of-time-months",
+                suffix: {
+                text: "Years"
+                },
+                classes: "govuk-input--width-2",
                 spellcheck: false
             }) }}
 

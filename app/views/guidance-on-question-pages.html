@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">CAS3 Interactive Prototypes</span>
+            <h1 class="govuk-heading-l">
+                Guidance on question pages
+            </h1>
+
+            <p>Test structure of question pages with guidance</p>
+            
+            <p>Two options here</p>
+
+            <ul class="govuk-list">
+                <li>
+                    <a class="govuk-link" href="/guidance-on-question-pages-1">Guidance above question</a>
+                </li>
+                <li>
+                    <a class="govuk-link" href="/guidance-on-question-pages-2">Guidance within details reveal below question</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+{% endblock %}

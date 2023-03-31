@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Referrals, consent and eligibility</span>
+            <h1 class="govuk-heading-l">
+                Previous accommodation experiences
+            </h1>
+            
+            <p>Check nDelius to see if applications have been made in the past 6 months for the following services:</p>
+
+            <ul class="govuk-list govuk-list govuk-list--bullet">
+                <li>
+                    Approved Premises (AP)
+                </li>
+                <li>
+                    Bail Accommodation and Support Services (BASS)
+                </li>
+                <li>
+                    Local authority housing
+                </li>
+            </ul>
+
+            <p>If you cannot find information about previous applications, select 'I don't know'.</p>
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+            name: "previous-applications",
+            fieldset: {
+                legend: {
+                text: "Have applications for accommodation services been submitted for John Smith previously?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Yes"
+                },
+                {
+                value: "no",
+                text: "No"
+                },
+                {
+                value: "i-dont-know",
+                text: "I don't know"
+                }
+            ]
+            }) }}
+
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+
+        </div>
+    </div>
+
+{% endblock %}
