@@ -73,6 +73,9 @@
 {% block bodyEnd %}
   {% block scripts %}
     {% include "includes/scripts.html" %}
+    <script>
+      window.MOJFrontend.initAll()
+    </script>
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
