@@ -2,47 +2,72 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  CAS3 Prototype Kit
+  CAS3 Interactive prototypes
 {% endblock %}
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  <h1 class="govuk-heading-xl">
+    CAS3 Interactive Prototypes <!-- You can change the service name by editing the file '/app/config.js' -->
+  </h1>
+  <p class="govuk-body-l">
+    Interactive prototypes for CAS3
+  </p>
+</div>
+
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        CAS3 Interactive Prototypes <!-- You can change the service name by editing the file '/app/config.js' -->
-      </h1>
-      <p>
-        Interactive prototypes for CAS3
-      </p>
 
-      <h2 class="govuk-heading-l">Apply</h2>
-
-      <p>Making an application for temporary accommodation</p>
-
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-link" href="/input-length-of-time">Input a length of time</a>
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#apply">
+            Apply
+          </a>
         </li>
-        <li>
-          <a class="govuk-link" href="/guidance-on-question-pages">Guidance on question pages</a>
-        </li>
-        <li>
-          <a class="govuk-link" href="/question-follow-up">Question pages with follow-up</a>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#receive">
+            Receive/Assess
+          </a>
         </li>
       </ul>
+      <div class="govuk-tabs__panel" id="apply">
 
-      <h2 class="govuk-heading-l">Receive/Assess</h2>
+        <h2 class="govuk-heading-l">Apply</h2>
 
-      <p>Receiving and assessing application for temporary accommodation</p>
+        <p>Making an application for temporary accommodation</p>
+  
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="/input-length-of-time">Input a length of time</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/guidance-on-question-pages">Guidance on question pages</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/question-follow-up">Question pages with follow-up</a>
+          </li>
+        </ul>
 
-      <ul class="govuk-list">
-        <li>
-          <a class="govuk-link" href="receive/application-dashboard/item-1">Application Dashboard</a>
-        </li>
-      </ul>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="receive">
 
+        <h2 class="govuk-heading-l">Receive</h2>
+
+        <p>Receiving and assessing application for temporary accommodation</p>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="receive/application-dashboard/item-1">Application Dashboard</a>
+          </li>
+        </ul>
+
+      </div>
     </div>
+
   </div>
 
 {% endblock %}
