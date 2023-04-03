@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-m">Accommodation referral details</span>
+            <h1 class="govuk-heading-l">
+                Provide further details
+            </h1>
+            
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "DTR / NOP reference number",
+                classes: "govuk-fieldset__legend--s"
+              },
+              id: "dtr-nop-ref-number",
+              name: "event-name"
+            }) }}
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {{ govukDateInput({
+              id: "date-dtr-nop",
+              namePrefix: "passport-issued",
+              fieldset: {
+                legend: {
+                  text: "Date of DTR/NOP",
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+
+        </div>
+    </div>
+
+{% endblock %}

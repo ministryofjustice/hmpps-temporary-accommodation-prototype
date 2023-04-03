@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-m">Accommodation referral details</span>
+
+            <form action="dtr-nop-answer">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-heading-l">
+                        Has the Duty to Refer (DTR) / National Offender Pathway (NOP) been submitted?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="dtr-nop-answer-yes" name="where-do-you-live" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="dtr-nop-answer-no" name="where-do-you-live" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              </form>
+
+              <p>The person must also agree to sign an Accommodation Compact.</p>
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            text: "Continue",
+            href: "/question-follow-up-1-follow-up-1.html"
+            }) }}
+
+        </div>
+    </div>
+
+{% endblock %}
