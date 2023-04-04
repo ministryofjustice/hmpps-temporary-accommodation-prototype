@@ -1,8 +1,7 @@
 
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
   {{ govukHeader({
     homepageUrl: "/",
     serviceName: "Temporary accommodation Referrals",
@@ -83,23 +82,24 @@
 
         <div class="govuk-grid-column-one-third">
 
+
             {%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
 
             <div style="float: right;">
-            {{ mojButtonMenu({
+              {{ mojButtonMenu({
                 items: [{
-                text: "First action",
-                href: "#"
+                  text: "First action",
+                  href: "#"
                 }, {
-                text: "Second action",
-                href: "#",
-                classes: "govuk-button--secondary"
+                  text: "Second action",
+                  href: "#",
+                  classes: "govuk-button--secondary"
                 }, {
-                text: "Third action",
-                href: "#",
-                classes: "govuk-button--secondary"
+                  text: "Third action",
+                  href: "#",
+                  classes: "govuk-button--secondary"
                 }]
-            }) }}
+              }) }}
             </div>
 
         </div>
@@ -332,4 +332,16 @@
         </div>
     </div>
 
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+    new MOJFrontend.ButtonMenu({
+        container: $(".moj-button-menu"),
+        mq: "(min-width: 200em)",
+        buttonText: "Actions",
+        menuClasses: "moj-button-menu__wrapper--right",
+      });
+</script>
 {% endblock %}

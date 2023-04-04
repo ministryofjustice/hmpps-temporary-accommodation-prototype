@@ -1,23 +1,9 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
 
-module.exports = router
-
-// Run this code when a form is submitted to 'dtr-nop-answer'
-router.post('/dtr-nop-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'how-many-balls'
-    var dtrNopAnswer = req.session.data['dtr-nop-answer']
-  
-    // Check whether the variable matches a condition
-    if (dtrNopAnswer == "yes"){
-      // Send user to next page
-      res.redirect('/question-follow-up-1-follow-up-1')
-    } else {
-      // Send user to ineligible page
-      res.redirect('/question-follow-up-1-follow-up-2')
-    }
-  
-  })
+// Add your routes here
